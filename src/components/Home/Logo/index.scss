@@ -1,0 +1,47 @@
+.logo-container {
+  z-index: 0;
+  width: 400px;
+  height: 609px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+  animation: zoomInDown 2.5s ease-in-out 1s;
+  user-select: none;
+
+  svg {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    transform: rotateZ(30deg) !important;
+  }
+
+  .solid-logo {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(30deg) !important;
+    font-size: 500px; // adjust size to match the SVG
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+.svg-container {
+  // stroke: #ffd700;
+  stroke-width: 10;
+}
+// .logo-3d {
+//   color: #ff004f;
+//   text-shadow:
+//     30px 3px 0 #000,
+//     6px 6px 0 #333;
+// }
+.logo-3d {
+  color: #e0e1dd;
+  text-shadow: 3px 3px 12px rgba(119, 141, 169, 0.8); // smooth shadow in #778da9
+}
