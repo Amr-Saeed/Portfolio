@@ -41,7 +41,7 @@ const Skills = () => {
           </p>
           <p>
             My main area of interest is Front-End development, and I specialize
-            in React.js, creating responsive, clean, and user-friendly web
+            in React.js and Next.js, creating responsive, clean, and user-friendly web
             interfaces. I enjoy turning ideas into real, interactive web
             applications and continuously work on improving the performance and
             accessibility of my code.

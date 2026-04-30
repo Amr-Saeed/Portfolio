@@ -5,19 +5,16 @@
 
 .page {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   user-select: none;
 }
 
 .top-tags {
-  bottom: auto;
   top: 35px;
 }
 
 .tags {
-  // color: var(--primary-color);
-  // color: var(--secondary-color); // red
-  color: var(--primary-color); // green
+  color: var(--primary-color);
   opacity: 0.9;
   position: absolute;
   bottom: 0;
@@ -30,45 +27,41 @@
   margin-left: -20px;
 }
 
+/* ================= CONTAINER ================= */
+
 .container {
   width: 100%;
-  will-change: contents;
-  height: 90%;
-  min-height: 566px;
-  position: absolute;
+  min-height: 100vh;
+  position: relative; /* 🔥 changed from absolute */
   opacity: 0;
-  top: 5%;
   margin: 0 auto;
   z-index: 1;
-  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10%;
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
 }
+
+/* ================= TEXT ZONE ================= */
 
 .container.contact-page,
 .container.about-page,
 .container.skills-page,
 .container.experience-page,
-.container.projects-page {
+ {
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35%;
-    vertical-align: middle;
-    display: table-cell;
-    max-height: 90%;
+    width: 40%;
+    max-width: 600px;
 
     h1 {
       font-size: 53px;
       font-family: "Coolvetica";
       color: var(--primary-color);
       font-weight: 400;
-      margin-top: 0;
+      margin: 0 0 40px 0;
       position: relative;
-      margin-bottom: 40px;
-      left: -10px;
 
       &:before {
         content: "<h1>";
@@ -76,10 +69,9 @@
         color: var(--primary-color);
         font-size: 18px;
         position: absolute;
-        margin-top: -10px;
+        top: -20px;
         left: -10px;
         opacity: 0.6;
-        line-height: 18px;
       }
 
       &:after {
@@ -87,11 +79,9 @@
         font-family: "La Belle Aurore", cursive;
         color: var(--primary-color);
         font-size: 18px;
-        line-height: 18px;
         position: absolute;
-        left: -30px;
-        bottom: -20px;
-        margin-left: 20px;
+        bottom: -25px;
+        left: -10px;
         opacity: 0.6;
       }
     }
@@ -101,17 +91,15 @@
       color: #fff;
       font-family: sans-serif;
       font-weight: 300;
-      max-width: fit-content;
+      margin-bottom: 10px;
       animation: pulse 1s;
 
       &:nth-of-type(1) {
         animation-delay: 1.1s;
       }
-
       &:nth-of-type(2) {
         animation-delay: 1.2s;
       }
-
       &:nth-of-type(3) {
         animation-delay: 1.3s;
       }
@@ -125,12 +113,13 @@
   }
 }
 
-// n is number of stars required
+/* ================= STARS BACKGROUND ================= */
+
 @function multiple-box-shadow($n) {
   $value: "#{random(2000)}px #{random(2000)}px #FFF";
 
   @for $i from 2 through $n {
-    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+    $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
   }
 
   @return unquote($value);
@@ -142,8 +131,8 @@ $shadows-big: multiple-box-shadow(200);
 
 html {
   height: 100%;
-  // background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* 🔥 allow scroll */
 }
 
 #stars {
@@ -154,10 +143,10 @@ html {
   animation: animStar 50s linear infinite;
 
   &:after {
-    content: " ";
+    content: "";
     position: absolute;
-    top: 2000px;
-    width: 1px;
+    top: 100vh;
+        width: 1px;
     height: 1px;
     background: transparent;
     box-shadow: $shadows-small;
@@ -172,7 +161,7 @@ html {
   animation: animStar 100s linear infinite;
 
   &:after {
-    content: " ";
+    content: "";
     position: absolute;
     top: 2000px;
     width: 2px;
@@ -190,7 +179,7 @@ html {
   animation: animStar 150s linear infinite;
 
   &:after {
-    content: " ";
+    content: "";
     position: absolute;
     top: 2000px;
     width: 3px;
@@ -204,8 +193,49 @@ html {
   from {
     transform: translateY(0px);
   }
-
   to {
     transform: translateY(-2000px);
   }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 61px 28px;  }
+
+  .container.contact-page,
+  .container.about-page,
+  .container.skills-page,
+  .container.experience-page,
+  .container.projects-page {
+    .text-zone {
+      width: 65%;
+      max-width: 500px;
+      height: 406px;
+    overflow: auto;
+    padding: 20px;
+      
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .tags {
+    left: 10px;
+    font-size: 14px;
+  }
+}
+#stars, #stars2, #stars3 {
+  position: fixed;
+  inset: 0;
 }

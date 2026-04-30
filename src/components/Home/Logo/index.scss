@@ -31,6 +31,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+}
+
 .svg-container {
   // stroke: #ffd700;
   stroke-width: 10;

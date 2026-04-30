@@ -135,7 +135,7 @@ const Contact = () => {
         </div>
         <div className="profile-card map-wrap">
           <img
-            src="/12.jpg"
+            src="/WhatsApp Image 2026-04-27 at 2.01.29 PM.jpeg"
             alt="Contact illustration"
             style={{ width: "100%", height: "100%" }}
           />

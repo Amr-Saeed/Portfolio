@@ -10,6 +10,30 @@ import "./index.scss";
 const workExperience = [
   {
     id: 1,
+    company: "BITES",
+    position: "Associate Frontend Developer",   
+    duration: "Apr. 2025 - Present",
+    location: "Remote",
+    achievements: [
+      "Working on enterprise-scale React.js and Next.js SaaS platforms, contributing to modular architecture and building reusable frontend components across multiple production systems.",
+      "Taking ownership of complete feature modules, translating Figma designs into production-grade interfaces while implementing API integration, state handling, and client-side business logic.",
+      "Participating in cross-functional Agile development cycles with designers and backend teams, ensuring consistent UX delivery and improving feature delivery efficiency across sprint cycles.",
+    ],
+  },
+  {
+    id: 2,
+    company: "National Telecommunication Institute (NTI)",
+    companyUrl: "http://nti.sci.eg/",
+    position: "Open-Source Applications Developer Tracke",   
+    duration: "Oct. 2025 - Jan. 2026",
+    location: "Smart Village, Egypt (Onsite)",
+    achievements: [
+      "Completed a 420-hour full-stack program covering React, Next.js, Node.js, SQL/NoSQL databases, Docker, CI/CD, cloud deployment, authentication, API security, and real-time systems.",
+      "Built and deployed production-ready applications and completed 132 hours of career development in communication, leadership, and project management",
+    ],
+  },
+  {
+    id: 3,
     company: "NTI",
     companyUrl: "http://nti.sci.eg/",
     position: "Frontend Developer Intern",
@@ -23,7 +47,7 @@ const workExperience = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     company: "Neorunetix",
     companyUrl: "",
     position: "Web Developer Intern",

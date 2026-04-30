@@ -45,24 +45,12 @@ const About = () => {
             💻 Computer Engineer | Front-End Developer | Software Enthusiast
           </h2>
           <p>
-            I'm a recent graduate in Computer Engineering with a solid
-            foundation in both hardware and software. Throughout my studies and
-            personal projects, I developed a strong passion for software
-            development and decided to focus my career on it. I have hands-on
-            experience with programming languages like C++ and Python, and I’ve
-            built a wide range of projects that have sharpened my
-            problem-solving skills and deepened my understanding of software
-            systems.
+          I'm a Computer Engineering graduate focused on software development, with a strong interest in Front-End technologies. I specialize in React.js and enjoy building clean, responsive, and user-friendly interfaces.
+
           </p>
           <p>
-            My main area of interest is Front-End development, and I specialize
-            in React.js, creating responsive, clean, and user-friendly web
-            interfaces. I enjoy turning ideas into real, interactive web
-            applications and continuously work on improving the performance and
-            accessibility of my code. I'm currently expanding my knowledge in
-            TypeScript, Next.JS and modern web technologies, and I'm open to new
-            opportunities where I can grow, contribute, and collaborate with
-            others on impactful projects.
+          Currently, I'm working on real-world projects at Bites, where I apply my skills to develop scalable web applications. I'm also expanding my knowledge in TypeScript, Next.js, and modern web practices while continuously improving performance and user experience.
+
           </p>
         </div>
 

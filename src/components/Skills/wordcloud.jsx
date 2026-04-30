@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect } from "react";
 import TagCloud from "TagCloud";
 
 const WordCloud = () => {
-  const [isLoading, setLoad] = useState(true);
-
   const container = ".content";
+
   const texts = [
     "Python",
     "Typescript",
@@ -15,8 +13,8 @@ const WordCloud = () => {
     "Bash",
     "React",
     "NextJS",
-    "supabase",
-    "RESTAPI",
+    "Supabase",
+    "REST API",
     "MySQL",
     "OpenCV",
     "Docker",
@@ -35,34 +33,51 @@ const WordCloud = () => {
     "Data Structures",
     "OOP",
     "ShadCN",
-    "MaterialUI",
-    "DataBase Management",
+    "Material UI",
+    "Database Management",
     "PHP",
     "Problem Solving",
   ];
+
   const options = {
-    radius: 300,
-    // animation speed
-    // slow, normal, fast
     maxSpeed: "fast",
     initSpeed: "fast",
-    // 0 = top
-    // 90 = left
-    // 135 = right-bottom
     direction: 135,
-    // interact with cursor move on mouse out
     keep: true,
   };
-  //   to render wordcloud each time the page is reloaded
+
+  const getRadius = () => {
+    const width = window.innerWidth;
+
+    if (width < 480) return 120;   // mobile
+    if (width < 768) return 160;   // small tablets
+    if (width < 1024) return 220;  // tablets
+    return 300;                    // desktop
+  };
+
   useEffect(() => {
-    if (isLoading) {
-      TagCloud(container, texts, options);
-      setLoad(false);
-    }
-  });
+    const renderCloud = () => {
+      const el = document.querySelector(container);
+      if (!el) return;
+
+      el.innerHTML = ""; // prevent duplicates
+
+      TagCloud(container, texts, {
+        ...options,
+        radius: getRadius(),
+      });
+    };
+
+    renderCloud();
+    window.addEventListener("resize", renderCloud);
+
+    return () => {
+      window.removeEventListener("resize", renderCloud);
+    };
+  }, []);
 
   return (
-    <div className="main">
+    <div className="tagcloud-wrap">
       <span className="content"></span>
     </div>
   );

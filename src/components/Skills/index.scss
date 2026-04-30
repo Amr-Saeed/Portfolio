@@ -3,21 +3,54 @@
   --secondary-color: #ff4500;
 }
 
+/* ================= WRAPPER ================= */
+
 .tagcloud-wrap {
-  // background: gray;
   float: right;
   width: 53%;
   height: 115%;
   margin-top: -3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .tagcloud {
-    color: var(--secondary-color);
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 650;
-    margin: 10% auto;
-  }
-  .tagcloud--item:hover {
+/* ================= TAG CLOUD ================= */
+
+.tagcloud {
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.tagcloud--item {
+  transition: 0.3s ease;
+
+  &:hover {
     color: var(--primary-color);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .tagcloud-wrap {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tagcloud {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagcloud {
+    font-size: 14px;
   }
 }
